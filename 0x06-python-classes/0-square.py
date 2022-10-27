@@ -1,3 +1,5 @@
 #!/usr/bin/python3
 class Square:
-    pass
+    def square(self, length, breath):
+        Square.length = length
+        Square.breath = breath
