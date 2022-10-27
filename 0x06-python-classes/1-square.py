@@ -1,7 +1,8 @@
 #!/usr/bin/python3
+"""This module creates a new class Square"""
 
-#class: square
-#@size: class attributes
-class Square:
-    def __init__(self, size):
-        self.__size = size
+class Square():
+        """A square class."""
+        def __init__(self, size):
+            """Initialization square."""
+            self.__size = size
