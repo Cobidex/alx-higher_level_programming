@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """This module will create a class"""
+
+
 class Square():
     """"a class of type square"""
-
     def __init__(self, size=0):
         """initializing quare object"""
 
