@@ -8,11 +8,11 @@ class Rectangle():
     def __init__(self, width, height):
         """initializing class object"""
 
-        if type(width) is not int:
+        if type(width) != int:
             raise TypeError("width must be an integer")
         elif width < 0:
             raise ValueError("width must be >= 0")
-        elif type(height) is not int:
+        elif type(height) != int:
             raise TypeError("height must be an integer")
         elif height < 0:
             raise ValueError("height must be >= 0")
@@ -33,7 +33,7 @@ class Rectangle():
     @width.setter
     def width(self, value):
         """sets the value of width"""
-        if type(value) is not int:
+        if type(value) != int:
             raise TypeError("width must be an integer")
         elif width < 0:
             raise ValueError("width must be >= 0")
@@ -43,7 +43,7 @@ class Rectangle():
     @height.setter
     def height(self, value):
         """sets the value of height"""
-        if type(height) is not int:
+        if type(height) != int:
             raise TypeError("height must be an integer")
         elif height < 0:
             raise ValueError("height must be >= 0")
