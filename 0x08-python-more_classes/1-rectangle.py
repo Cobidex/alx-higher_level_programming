@@ -6,7 +6,12 @@ class Rectangle():
     """class of type rectangle"""
 
     def __init__(self, width=0, height=0):
-        """initializing class object"""
+        """constructor initializing class object
+
+        Arguments:
+            width{int} -- width of rectangle (default: 0)
+            height{int} -- height of rectangle (default: 0)
+        """
 
         if type(width) != int:
             raise TypeError("width must be an integer")
@@ -22,17 +27,33 @@ class Rectangle():
 
     @property
     def width(self):
-        """retrieves value of width"""
+        """Getter function of width
+
+        Returns:
+            int -- width of rectangle
+        """
         return self.__width
 
     @property
     def height(self):
-        """retrieves value of height"""
+        """Getter function of height
+
+        Returns:
+            height of rectangle
+        """
         return self.__height
 
     @width.setter
     def width(self, value):
-        """sets the value of width"""
+        """setter function of width
+
+        Arguments:
+            value{int} -- value of width
+
+        Raises:
+            TypeError: width must be of type int
+            ValueError: width must be >=0
+        """
         if type(value) != int:
             raise TypeError("width must be an integer")
         elif value < 0:
@@ -42,7 +63,15 @@ class Rectangle():
 
     @height.setter
     def height(self, value):
-        """sets the value of height"""
+        """setter function of width
+
+            Arguments:
+                value{int} -- value of width
+
+            Raises:
+                TypeError: width must be of type int
+                ValueError: width must be >=0
+        """
         if type(value) != int:
             raise TypeError("height must be an integer")
         elif value < 0:
