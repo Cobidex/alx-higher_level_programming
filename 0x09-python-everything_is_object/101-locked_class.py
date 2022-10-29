@@ -1,14 +1,15 @@
 #!/usr/bin/python3
-"""module to create a locked class"""
+"""
+LockedClass
+"""
 
 
-class LockedClass():
-    """a Locked class"""
-
-    def __setattr__(self, name, value):
-        """sets attribute if name is as first_name"""
-
-        if name == "first_name":
-            self.__dict__[name] = value
+class LockedClass:
+    """ No class or object attributes, can't set
+        Except for first_name
+    """
+    def __setattr__(self, attribute, value):
+        if attribute == "first_name":
+            self.__dict__[attribute] = value
         else:
-            raise AttributeError("LockedClass has no attribute '" + Name + "'")
+            raise AttributeError("'LockedClass' object has no attribute '" + attribute + "'")
