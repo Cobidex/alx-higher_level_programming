@@ -7,7 +7,7 @@ parameter b: int set to 98 default
 
 
 def add_integer(a, b=98):
-    """ 
+    """
     adds two integers
     """
     if type(a) == float or type(b) == float:
