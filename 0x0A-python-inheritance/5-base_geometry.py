@@ -3,5 +3,7 @@
 """
 
 
-class BaseGeometry:
-    pass
+class BaseGeometry():
+    """an empty class"""
+    def __init__():
+        pass
