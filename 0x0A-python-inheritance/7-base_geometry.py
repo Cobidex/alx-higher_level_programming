@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""BaseGeometry
+"""module called BaseGeometry
 """
 
 
-class BaseGeometry:
+class BaseGeometry():
     """Contains functions area(), integer_validator()
     """
 
