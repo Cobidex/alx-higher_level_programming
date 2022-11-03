@@ -4,7 +4,7 @@
 
 class Student():
     '''creates a class of type student'''
-    
+
     def __init__(self, first_name, last_name, age):
         '''initializes the class object'''
         self.first_name = first_name
