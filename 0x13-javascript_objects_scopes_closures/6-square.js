@@ -7,7 +7,7 @@ class Square extends Rectangle {
 
   charPrint (c) {
     let myChar = 'X';
-    if (c) {
+    if (c === 'C') {
       myChar = 'C';
     }
     for (let i = 0; i < this.width; i++) {
