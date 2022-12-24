@@ -28,4 +28,4 @@ if __name__ == "__main__":
     # Fetch and print the results
     results = cursor.fetchall()
     for row in results:
-        print(row[0])
+        print(row[2])
