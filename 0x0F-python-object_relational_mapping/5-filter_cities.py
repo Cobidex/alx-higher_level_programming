@@ -26,4 +26,4 @@ if __name__ == "__main__":
     c.execute(query)
 
     # Fetch and print the results
-    print(", ".join(i[2]) for i in c.fetchall() if row[2] == sys.argv[4])
+    print(", ".join(i[2]) for i in c.fetchall() if i[4] == sys.argv[4])
