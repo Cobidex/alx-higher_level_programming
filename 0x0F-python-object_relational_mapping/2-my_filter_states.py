@@ -18,8 +18,8 @@ if __name__ == "__main__":
     cur = conn.cursor()
 
     # Select all states with a name matching the argument, sorted by id
-    query = "SELECT * FROM states WHERE name=%s ORDER BY id ASC"
-    cur.execute(query, (sys.argv[4]))
+    query = "SELECT * FROM states WHERE name={} ORDER BY id ASC"
+    cur.execute(query. format(sys.argv[4]))
 
     # Print the states
     rows = cur.fetchall()
