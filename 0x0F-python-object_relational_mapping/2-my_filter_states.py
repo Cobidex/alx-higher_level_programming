@@ -18,7 +18,7 @@ if __name__ == "__main__":
     cur = conn.cursor()
 
     # Select all states with a name matching the argument, sorted by id
-    q = "SELECT * FROM `states` WHERE BINARY `name`= '{}' ORDER BY state.id"
+    q = "SELECT * FROM `states` WHERE BINARY `name`= '{}'"
     cur.execute(q. format(sys.argv[4]))
 
     # Print the states
