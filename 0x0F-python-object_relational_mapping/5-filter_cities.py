@@ -20,12 +20,12 @@ if __name__ == "__main__":
     query = "SELECT * \
             FROM cities \
             INNER JOIN states ON cities.state_id = states.id \
-            WHERE states.name = %s ORDER BY cities.id ASC"
+            ORDER BY cities.id ASC"
 
     # Execute the SELECT statement
-    cursor.execute(query, (sys.argv[4],))
+    cursor.execute(query)
 
     # Fetch and print the results
     results = cursor.fetchall()
     for row in results:
-        print(", ". join(row[0]))
+        print(", ".join(row[0]) if row[2] == sys.argv[4])
