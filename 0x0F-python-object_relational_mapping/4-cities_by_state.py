@@ -17,8 +17,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # Use a parameterized query to protect against MySQL injection attacks
-    query = "SELECT * FROM cities ORDER BY id ASC"
-    cursor.execute(query)
+    cursor.execute("SELECT * FROM cities ORDER BY id ASC")
 
     # Fetch and print the results
     results = cursor.fetchall()
