@@ -14,7 +14,7 @@ if __name__ == "__main__":
         passwd=sys.argv[2],
         db=sys.argv[3]
     )
-    cursor = db.cursor()
+    c = db.cursor()
 
     # Prepare the SELECT statement with placeholders
     query = "SELECT * \
@@ -23,9 +23,7 @@ if __name__ == "__main__":
             ORDER BY cities.id ASC"
 
     # Execute the SELECT statement
-    cursor.execute(query)
+    c.execute(query)
 
     # Fetch and print the results
-    results = cursor.fetchall()
-    for row in results:
-        print(", ".join(row[0]) if row[2] == sys.argv[4])
+    print(", ".join(i[2]) for i in c.fetchall() if row[2] == sys.argv[4])
