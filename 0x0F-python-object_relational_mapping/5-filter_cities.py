@@ -16,14 +16,11 @@ if __name__ == "__main__":
     )
     c = db.cursor()
 
-    # Prepare the SELECT statement with placeholders
-    query = "SELECT * \
+    # execute querry
+    c.execute("SELECT * \
             FROM `cities` \
             INNER JOIN `states` ON `cities`.`state_id` = `states`.`id` \
-            ORDER BY `cities`.`id` ASC"
-
-    # Execute the SELECT statement
-    c.execute(query)
+            ORDER BY `cities`.`id` ASC")
 
     # Fetch and print the results
     print(", ".join(i[2]) for i in c.fetchall() if i[4] == sys.argv[4])
