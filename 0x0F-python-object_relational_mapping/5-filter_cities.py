@@ -15,6 +15,6 @@ if __name__ == "__main__":
             WHERE states.name LIKE BINARY %(state_name)s \
             ORDER BY cities.id ASC""", {'state_name': sys.argv[4]})
     rows = c.fetchall()
-    print(", ".join(row[1]) for row in rows)
+    print(", ".join([row[1] for row in rows]))
     c.close()
     db.close()
