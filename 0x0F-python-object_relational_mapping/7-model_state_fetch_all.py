@@ -7,7 +7,7 @@ from model_state import Base, State
 import sys
 
 
-if "__name__" == "__main__":
+if __name__ == "__main__":
     u_name = sys.argv[1]
     pwd = sys.argv[2]
     db = sys.argv[3]
