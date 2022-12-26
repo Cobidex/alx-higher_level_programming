@@ -20,6 +20,6 @@ if "__name__" == "__main__":
 
     data = session.query(state).order_by(state.id).all()
     for datum in data:
-        print('{}: {}'. format(state.id, state.name))
+        print('{}: {}'. format(datum.id, datum.name))
 
     session.close()
