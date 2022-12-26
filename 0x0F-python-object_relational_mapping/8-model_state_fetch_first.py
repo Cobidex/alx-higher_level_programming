@@ -20,7 +20,7 @@ if __name__ == "__main__":
 
     data = session.query(State).order_by(State.id).first()
     if data not None:
-        print('{}: {}'. format(datum.id, datum.name))
+        print('{}: {}'. format(data.id, data.name))
     else:
         print('Nothing')
 
