@@ -18,12 +18,10 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    data = session.query(State).all()
-    for datum in data:
-        if (datum.name == sys.argv[4]):
-            print(datum.id)
-            session.close()
-            return
-    printf('Not found')
+    data = session.query(State).filter(state.name == sys.argv[4]).first()
+    if data is None:
+        print('Not found')
+    else:
+        print(data.id)
 
     session.close()
