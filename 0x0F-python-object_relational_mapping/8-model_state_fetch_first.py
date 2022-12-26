@@ -19,9 +19,9 @@ if __name__ == "__main__":
     session = Session()
 
     data = session.query(State).order_by(State.id).first()
-    if data not None:
-        print('{}: {}'. format(data.id, data.name))
-    else:
+    if data is None:
         print('Nothing')
+    else:
+        print('{}: {}'. format(data.id, data.name))
 
     session.close()
