@@ -18,8 +18,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    data = session.query(State).filter(State.name.like('%a%')\
-            order_by(State.id).all()
+    data = session.query(State).filter(State.name.like('%a%'))\
+        order_by(State.id).all()
     for datum in data:
         print('{}: {}'. format(datum.id, datum.name))
 
