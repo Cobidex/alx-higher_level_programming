@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-
+"""
+contains relationships codes
+"""
 import sys
 
 from sqlalchemy import create_engine
@@ -25,9 +27,6 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     # Create a session instance
     session = Session()
-
-    # Create the tables in the database based on the defined classes
-    Base.metadata.create_all(engine)
 
     # Create a new State object with the name "California"
     california = State(name="California")
