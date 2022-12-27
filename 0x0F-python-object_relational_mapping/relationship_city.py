@@ -4,9 +4,7 @@ contains City
 """
 
 from sqlalchemy import Column, Integer, String, ForeignKey
-from sqlalchemy.ext.declarative import declarative_base
-# creates Base
-Base = declarative_base()
+from relationship_state import Base, State
 
 
 class City(Base):
