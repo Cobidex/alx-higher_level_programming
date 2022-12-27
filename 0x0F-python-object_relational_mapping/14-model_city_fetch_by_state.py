@@ -1,23 +1,30 @@
 #!/usr/bin/python3
-"""
-This script defines a City class
-to work with MySQLAlchemy ORM.
-"""
 
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
-from sqlalchemy import Column, Integer, String, ForeignKey
+from model_city import City
+import sys
 
 
-class City(Base):
-    """City class
-    Attributes:
-        __tablename__ (str): The table name of the class
-        id (int): The id of the class
-        name (str): The name of the class
-        state_id (int): The state the city belongs to
-    """
-    __tablename__ = 'cities'
+if __name__ == "__main__":
+    # Connect to the MySQL server
+    engine = (
+            create_engine(
+             f'mysql://{sys.argv[1]}:{sys.argv[2]}@\
+             localhost:3306/{sys.argv[3]}')
+            )
 
-    id = Column(Integer, primary_key=True)
-    name = Column(String(128), nullable=False)
-    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
+    # Create a session
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+    # Retrieve all cities sorted by id in ascending order
+    cities = session.query(City).order_by(City.id).all()
+
+    # Print the cities
+    for city in cities:
+        print(f'{city.state.name}: ({city.id}) {city.name}')
+
+    # Close the session
+    session.close()

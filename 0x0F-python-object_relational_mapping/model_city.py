@@ -4,6 +4,7 @@ This script defines a City class
 to work with MySQLAlchemy ORM.
 """
 
+from sqlalchemy.orm import relationship
 from model_state import Base, State
 from sqlalchemy import Column, Integer, String, ForeignKey
 
@@ -21,3 +22,4 @@ class City(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)
     state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
+    state = relationship(State)
