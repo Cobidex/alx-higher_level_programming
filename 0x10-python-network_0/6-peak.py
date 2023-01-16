@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 '''finds the peak element'''
 
+
 def find_peak(list_of_integers):
     '''finds the peak element'''
 
