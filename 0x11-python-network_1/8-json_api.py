@@ -10,13 +10,13 @@ import requests
 
 
 if __name__ == "__main__":
-    my_dict = {'q': sys.argv[1] if len(sys.argv) > 1 else ""}
-    req = requests.post('http://0.0.0.0:5000/search_user', data=my_dict)
+    my_dict = {"q": sys.argv[1] if len(sys.argv) > 1 else ""}
+    req = requests.post("http://0.0.0.0:5000/search_user", data=my_dict)
     try:
         j_dict = req.json()
-        if json:
-            print('[{}] {}'. format(j_dict.get('id'), j_dict.get('name')))
+        if j_dict:
+            print("[{}] {}". format(j_dict.get("id"), j_dict.get("name")))
         else:
-            print('No result')
+            print("No result")
     except:
-        print('Not a valid JSON')
+        print("Not a valid JSON")
