@@ -15,10 +15,12 @@ if __name__ == "__main__":
     else:
         my_dict = {'q': sys.argv[1]}
     req = requests.post('http://0.0.0.0:5000/search_user', data=my_dict)
-    j = req.json()
     if req.headers.get('content-type') != 'application/json':
         print('Not a valid JSON')
-    elif j == {}:
+        return
+    j = req.json()
+    elif len(j) == 0:
         print('No result')
+        return
     else:
         print('[{}] {}'.format(d['id'], d['name']))
