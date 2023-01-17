@@ -18,5 +18,5 @@ if __name__ == "__main__":
             print("[{}] {}". format(j_dict.get("id"), j_dict.get("name")))
         else:
             print("No result")
-    except json.decoder.JSONDecodeError:
+    except ValueError:
         print("Not a valid JSON")
