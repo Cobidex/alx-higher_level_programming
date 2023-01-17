@@ -8,7 +8,6 @@
 
 import sys
 import urllib.request
-from urllib.error import HTTPError
 
 
 if __name__ == "__main__":
@@ -17,5 +16,5 @@ if __name__ == "__main__":
         with urllib.request.urlopen(url) as response:
             html = response.read().decode('utf-8')
             print(html)
-    except HTTPError as e:
-        print('Error code: '. format(e.code))
+    except urllib.error.HTTPError as e:
+        print('Error code: {}'. format(e.code))
