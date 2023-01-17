@@ -19,8 +19,7 @@ if __name__ == "__main__":
         print('Not a valid JSON')
         return
     j = req.json()
-    elif len(j) == 0:
+    if not j:
         print('No result')
-        return
     else:
         print('[{}] {}'.format(d['id'], d['name']))
