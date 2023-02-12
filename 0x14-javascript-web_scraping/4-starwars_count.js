@@ -1,24 +1,16 @@
 #!/usr/bin/node
 
 const request = require('request');
-const starWarsUri = process.argv[2];
-let times = 0;
-
-request(starWarsUri, function (error, response, body) {
-  body = JSON.parse(body).results;
-
-  for (let i = 0; i < body.length; ++i) {
-    const chars = body[i].chars;
-
-    for (let j = 0; j < chars.length; ++j) {
-      const chars = chars[j];
-      const charsId = chars.split('/')[5];
-
-      if (charsId === '18') {
-        times += 1;
-      }
-    }
+const url = 'https://swapi-api.alx-tools.com/api/people/18';
+request.get(url, function (error, response, body) {
+  if (error) {
+    console.log(error);
+    return;
   }
-
-  console.log(times);
+  if (response.statusCode !== 200) {
+    console.log(`status code: ${response.statusCode}`);
+    return;
+  }
+  const res = JSON.parse(body);
+  console.log(res.films.length);
 });
