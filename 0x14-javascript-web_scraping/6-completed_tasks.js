@@ -24,7 +24,7 @@ request.get(process.argv[2], function (error, response, body) {
       }
     } else {
       if (users[i].completed) {
-        temp = users[i].completed;
+        temp = users[i].userId;
         if (temp in myDict) {
           myDict[temp] += 1;
         } else {
