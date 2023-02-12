@@ -17,10 +17,6 @@ request.get(process.argv[2], function (error, response, body) {
         } else {
           myDict[temp] = 1;
         }
-      } else {
-        if (!(temp in myDict)) {
-          myDict[temp] = 0;
-        }
       }
     } else {
       if (users[i].completed) {
@@ -29,10 +25,6 @@ request.get(process.argv[2], function (error, response, body) {
           myDict[temp] += 1;
         } else {
           myDict[temp] = 1;
-        }
-      } else {
-        if (!(temp in myDict)) {
-          myDict[temp] = 0;
         }
       }
     }
